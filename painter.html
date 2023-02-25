@@ -41,8 +41,42 @@ function resolveForm (){
     }
 }
 </script>
+<form>
+    <label for="password">The hidden painter name</label>
+    <input type="password" id="password"  value="Monet"> <br>
+
+    <label for="guessPainter">Guess the painter </label>
+    <input type="text" id="guessPainter"  autofocus> <br>
+
+    <input type="button" id="Gussbtn" onclick="checkPainter()" value="Check the guess">
+</form>
 
 
+<p id="result"></p>
+
+<script>
+    good  = 0
+    oops = 0
+    function checkPainter()
+     {  
+          password = document.getElementById("password").value
+        guessPainter = document.getElementById("guessPainter").value
+
+        out = document.getElementById("result")
+        if (password == guessPainter)
+         {
+            good = good + 1
+            out.innerHTML = "good - " + good + "," + "oops - " + oops
+            alert("You got it right")
+        } 
+        else 
+        {
+            oops += 1
+                alert("Sorry");
+                out.innerHTML = "good - " + good + "," + "oops - " + oops 
+        }
+    }
+</script>
 
 
 
