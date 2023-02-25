@@ -41,6 +41,7 @@ function resolveForm (){
     }
 }
 </script>
+
 <form>
     <label for="password">The hidden painter name</label>
     <input type="password" id="password"  value="Monet"> <br>
@@ -52,7 +53,7 @@ function resolveForm (){
 </form>
 
 
-<p id="result"></p>
+<p id="results"></p>
 
 <script>
     good  = 0
@@ -62,24 +63,21 @@ function resolveForm (){
           password = document.getElementById("password").value
         guessPainter = document.getElementById("guessPainter").value
 
-        out = document.getElementById("result")
+        out1 = document.getElementById("results")
         if (password == guessPainter)
          {
             good = good + 1
-            out.innerHTML = "good - " + good + "," + "oops - " + oops
+            out1.innerHTML = "good - " + good + "," + "oops - " + oops
             alert("You got it right")
         } 
         else 
         {
             oops += 1
                 alert("Sorry");
-                out.innerHTML = "good - " + good + "," + "oops - " + oops 
+                out1.innerHTML = "good - " + good + "," + "oops - " + oops 
         }
     }
 </script>
-
-
-
 
 </body>
 </html> 
