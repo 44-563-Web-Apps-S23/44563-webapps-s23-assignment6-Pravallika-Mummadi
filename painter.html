@@ -73,10 +73,12 @@ function resolveForm (){
         else 
         {
             oops += 1
-                alert("Sorry");
-                out1.innerHTML = "good - " + good + "," + "oops - " + oops 
+            alert("Sorry");
         }
-    }
+            out1.innerHTML = "good - " + good + "," + "oops - " + oops 
+            noOfGuesses(oops);
+        }
+    
 </script>
 
     <div class="container"><img src="lily.jpg" id="plants" height="100px" width="100px" onclick="selectImage()"></div>
@@ -99,7 +101,13 @@ function resolveForm (){
             }
         }
        
-        
+        function noOfGuesses(guessCount) {
+            if (guessCount == 10) {
+                alert("Sorry, ran out of guesses");
+                oops=0;
+            }
+        }
+
     </script>
 
 
