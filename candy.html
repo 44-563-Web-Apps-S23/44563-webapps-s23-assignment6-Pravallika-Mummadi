@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+    </head>
+<body>
+
+<h2>Pravallika Mummadi chooses candy</h2>
+
+<div class="container">
+    <form>
+       
+        <input type="checkbox" id="Dark_Chocolate" name="candy" value="true">
+        <label for="Dark_Chocolate">Dark_Chocolate</label> <br>
+     
+        <input type="checkbox" id="Nuts" name="candy" value="true">
+        <label for="Nuts">Nuts</label> <br>
+    
+        <input type="checkbox" id="Chewy" name="candy" value="false">
+        <label for="Chewy">Chewy</label> <br>
+    
+        <input type="button" class="btn btn-danger" value="Select a box" onclick="selectBox()">
+    
+    </form>
+    <br>
+    <form>
+        <label for="size">Enter the size</label>
+        <input type="text" id="size" name="size" value="size"> <br>
+        
+        <label for="size">Enter price</label>
+        <input type="text" id="price" name="price"> <br>
+    
+        <input type="button" class="btn btn-warning" value="Update the box" onclick="updateBox()">
+    </form>
+    
+    
+    
+    <p id="result">This text will be replaced </p>
+</div>
+</div>
+<script> 
+    my_candy_box={};
+    function selectBox()
+    {
+        
+        Dark_Chocolate=document.getElementById("Dark_Chocolate").checked
+        Nuts=document.getElementById("Nuts").checked
+        Chewy=document.getElementById("Chewy").checked
+    
+        if(Nuts)
+        {
+            my_candy_box.Nuts=true;
+        }
+        else
+        {
+            my_candy_box.Nuts=false;
+        }
+        if(Dark_Chocolate)
+        {
+            my_candy_box.Dark_Chocolate=true;
+            
+        }
+        else
+        {
+            my_candy_box.Dark_Chocolate=false;
+            
+        }
+        if(Chewy)
+        {
+            my_candy_box.Chewy=true;
+        }
+        else
+        {
+            my_candy_box.Chewy=false;
+        }
+        
+    
+        document.getElementById("result").innerHTML=JSON.stringify(my_candy_box)
+
+        document.getElementById("Nuts").checked = false;
+
+        document.getElementById("Chewy").checked = false;
+
+        document.getElementById("Dark_Chocolate").checked = false;
+
+    }
+    
+    function updateBox()
+    {
+         my_candy_box = {};
+         size=document.getElementById("size").value;
+         price=document.getElementById("price").value;
+        my_candy_box["size"]=size;
+        my_candy_box["price"]=price;
+    
+        document.getElementById("result").innerHTML=JSON.stringify(my_candy_box)
+    }
+    
+    </script>
+
+</body>
+</html>

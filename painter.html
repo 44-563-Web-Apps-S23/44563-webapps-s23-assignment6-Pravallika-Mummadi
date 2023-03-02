@@ -79,5 +79,29 @@ function resolveForm (){
     }
 </script>
 
+    <div class="container"><img src="lily.jpg" id="plants" height="100px" width="100px" onclick="selectImage()"></div>
+    <script>
+        var useImage = 1;
+        function selectImage() {
+            switch (useImage) {
+                case 1:
+                    document.getElementById("plants").src = "abelia.jpg"
+                    useImage+= 1;
+                    break;
+                case 2:
+                    document.getElementById("plants").src = "Utah.jpg"
+                    useImage +=1;
+                    break;
+                case 3:
+                    document.getElementById("plants").src = "lily.jpg"
+                    useImage = 1;
+                    break;
+            }
+        }
+       
+        
+    </script>
+
+
 </body>
 </html> 
