@@ -76,7 +76,7 @@ function resolveForm (){
             alert("Sorry");
         }
             out1.innerHTML = "good - " + good + "," + "oops - " + oops 
-            noOfGuesses(oops);
+            Counterguess(oops);
         }
     
 </script>
@@ -101,8 +101,10 @@ function resolveForm (){
             }
         }
        
-        function noOfGuesses(guessCount) {
-            if (guessCount == 10) {
+        function Counterguess(guessCount) 
+        {
+            if (guessCount == 10) 
+            {
                 alert("Sorry, ran out of guesses");
                 oops=0;
             }
